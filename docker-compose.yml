@@ -1,2 +1,7 @@
 web:
   build: .
+  ports:
+  - "localhost:8080:80"
+  volumes:
+  - ./www/laravel:/var/www/laravel 
+  - ./logs:/var/log/nginx
