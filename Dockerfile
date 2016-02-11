@@ -8,7 +8,7 @@ RUN locale-gen ru_RU.UTF-8 && dpkg-reconfigure locales
 # Добавляем необходимые репозитарии и устанавливаем пакеты
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y wget curl php5-fpm php5-mysql php5-gd php5-curl php-pear php-apc php5-mcrypt php5-imagick php5-memcache supervisor nginx
+RUN apt-get install -y wget curl php5-fpm php5-mysql php5-sqlite php5-gd php5-curl php-pear php-apc php5-mcrypt php5-imagick php5-memcache supervisor nginx
 
 # Удаляем хост по умолчанию
 RUN rm -rf /etc/nginx/sites-enabled/default
