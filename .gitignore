@@ -51,3 +51,6 @@ Thumbs.db
 ###########
 /www/*
 /logs/*
+/nginx/*
+/php/*
+/mysql/*

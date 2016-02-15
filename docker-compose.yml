@@ -1,7 +1,16 @@
-web:
-  build: .
+nginx:
+  build: ./nginx
   ports:
-  - "localhost:8080:80"
+    - "8080:80"
   volumes:
-  - ./www/laravel:/var/www/laravel 
-  - ./logs:/var/log/nginx
+    - ./www.template:/etc/nginx/conf.d/default.conf
+    - ./www:/usr/share/nginx/html
+    - ./logs:/var/log/nginx    
+    
+  links:
+    - php:php
+
+php:
+  build: ./php
+  volumes:
+    - ./www:/var/www/html
